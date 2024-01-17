@@ -15,16 +15,33 @@ $outline: 2px;
   box-sizing: border-box;
 }
 
+body {
+  overflow: hidden;
+}
+
 #root {
   margin: 0;
   padding: 0;
 }
 
-#app {
+#landing-page {
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #000;
+}
+
+.scroll-button {
+  min-height: 5vh;
+}
+
+#landing {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 95vh;
   min-width: 100vw;
   transform-style: preserve-3d;
   background-color: #000;
@@ -37,11 +54,6 @@ $outline: 2px;
   transform: translate(-50%, -50%);
   width: 700px;
   height: 700px;
-  /* border-radius: 50%; */
-  /* box-shadow: inset 0 0 20px rgba(0, 0, 0, 1), 0 0 50px #4069ff; */
-  /* background: url(./assets/earth-map-pixel.png);
-  background-size: cover;
-  background-repeat: repeat-x; */
   & canvas {
     border-radius: 50%;
   }
@@ -126,5 +138,49 @@ $outline: 2px;
   100% {
     transform: perspective(1000px) rotateY(0deg) rotateX(15deg) translateY(-30px);
   }
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  position: relative;
+}
+
+.menu-button {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  border-radius: 50%;
+  color: white;
+  background-color: #000;
+  border-color: #E24C4C;
+  font-size: 3em;
+  padding: 15px;
+  z-index: 10;
+  line-height: 30px;
+}
+
+.f1 {
+  bottom: 30px;
+  right: 135px;
+  font-size: 1.5em;
+}
+.f2 {
+  bottom: 100px;
+  right: 125px;
+  font-size: 1.5em;
+}
+.f3 {
+  bottom: 135px;
+  right: 70px;
+  font-size: 1.5em;
+}
+.f4 {
+  bottom: 125px;
+  right: 10px;
+  font-size: 1.5em;
 }
 
