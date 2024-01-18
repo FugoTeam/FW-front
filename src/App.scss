@@ -30,18 +30,50 @@ body {
   justify-content: space-around;
   align-items: center;
   background-color: #000;
+  padding-bottom: 5vh;
+  position: relative;
+  z-index: 1;
 }
 
 .scroll-button {
   min-height: 5vh;
 }
 
-#landing {
+.login-button {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  background-color: #E24C4C;
+}
+
+.close-button {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+
+#login-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 95vh;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #FFF;
+  opacity: 0.7;
+  gap: 50px;
+}
+
+#landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
   min-width: 100vw;
   transform-style: preserve-3d;
   background-color: #000;
@@ -79,7 +111,6 @@ body {
   transform-style: preserve-3d;
   padding: 5px 11px;
   transform: rotateY(calc(var(--i) * calc(360deg / 11))) translateZ(300px);
-  /* text3D */
   text-shadow: 
 			-1px -1px 0 $purple, 1px -1px 0 $purple, -1px 1px 0 $purple, 1px 1px 0 $purple, 
 			1px 0px 0px $green, 0px 1px 0px $green, 2px 1px 0px $green, 1px 2px 0px $green, 3px 2px 0px $green, 2px 3px 0px $green, 4px 3px 0px $green, 3px 4px 0px $green, 5px 4px 0px $green,
@@ -184,3 +215,50 @@ body {
   font-size: 1.5em;
 }
 
+input[type=text] {
+	appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid #E24C4C;
+	background: rgba(#E24C4C, .2);
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+	color: #E24C4C;
+  opacity: 1;
+  font-size: 2em;
+  width: 30%;
+}
+
+input[type=password] {
+	appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid #E24C4C;
+	background: rgba(#E24C4C, .2);
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+	color: #E24C4C;
+  opacity: 1;
+  font-size: 2em;
+  width: 30%;
+}
+
+.submit-button {
+  background-color: #E24C4C;
+  font-size: 2em;
+  width: 30%;
+  padding: .4em;
+}
+
+.FW-title span {
+  color: #E24C4C;
+  font-size: 3em;
+  padding: 5px 11px;
+  text-shadow: 
+			-1px -1px 0 $purple, 1px -1px 0 $purple, -1px 1px 0 $purple, 1px 1px 0 $purple, 
+			1px 0px 0px $green, 0px 1px 0px $green, 2px 1px 0px $green, 1px 2px 0px $green, 3px 2px 0px $green, 2px 3px 0px $green, 4px 3px 0px $green, 3px 4px 0px $green, 5px 4px 0px $green,
+			3px 5px 0px $purple, 6px 5px 0px $purple, 
+			-1px 2px 0 black, 0 3px 0 $purple, 1px 4px 0 $purple, 2px 5px 0px $purple,
+			2px -1px 0 $purple, 3px 0 0 $purple, 4px 1px 0 $purple, 5px 2px 0px $purple, 6px 3px 0 $purple, 7px 4px 0 $purple,
+		  10px 10px 4px transparent;
+}

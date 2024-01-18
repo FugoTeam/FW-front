@@ -1,8 +1,9 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import * as THREE from "three"
 import { OrbitControls } from "three/addons/controls/OrbitControls.js"
 
 const LandingHook = () => {
+	const [isLoginFormOpen, setIsLoginFormOpen] = useState(false)
 	const mountRef = useRef(null) as unknown as React.MutableRefObject<HTMLDivElement>
 
 	useEffect(() => {
@@ -62,7 +63,7 @@ const LandingHook = () => {
 		window.scrollTo({ top: windowHeight, behavior: "smooth" })
 	}
 
-	return { mountRef, scrollToHome }
+	return { mountRef, scrollToHome, isLoginFormOpen, setIsLoginFormOpen }
 }
 
 export default LandingHook
