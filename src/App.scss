@@ -29,7 +29,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: #000;
+  background-color: #FFF;
   padding-bottom: 5vh;
   position: relative;
   z-index: 1;
@@ -53,10 +53,9 @@ body {
   right: 50px;
 }
 
-#login-form {
+.login-form {
   position: absolute;
   top: 0;
-  left: 0;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -64,9 +63,9 @@ body {
   align-items: center;
   min-width: 100vw;
   min-height: 100vh;
-  background-color: #FFF;
-  opacity: 0.7;
+  background-color: rgba(255, 255, 255, 0.6);
   gap: 50px;
+  transform: translateX(100%);
 }
 
 #landing {
@@ -76,7 +75,7 @@ body {
   min-height: 90vh;
   min-width: 100vw;
   transform-style: preserve-3d;
-  background-color: #000;
+  // background-color: #FFF;
 }
 
 #earth {
@@ -88,7 +87,7 @@ body {
   height: 700px;
   & canvas {
     border-radius: 50%;
-  }
+  } 
 }
 
 #globe-div {
@@ -151,14 +150,13 @@ body {
 	}
 }
 
-.cricle span::before {
+.circle span::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #E24C4C;
   transform: translateZ(-5px);
 }
 

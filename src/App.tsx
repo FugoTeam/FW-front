@@ -1,5 +1,5 @@
-import Landing from "./components/Landing"
-import Home from "./components/Home"
+import Landing from "./components/pages/Landing"
+import Home from "./components/pages/Home"
 import "./App.scss"
 
 function App() {
