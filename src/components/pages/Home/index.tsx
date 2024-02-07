@@ -3,7 +3,7 @@ import Map from "react-map-gl"
 import { GiCog, GiPositionMarker, GiDodge, GiAnglerFish, GiBoatFishing } from "react-icons/gi"
 
 function Home() {
-	const { viewport, scrollToLanding, isMenuOpen, setIsMenuOpen } = HomeHook()
+	const { viewport, scrollToLanding, isMenuOpen, setIsMenuOpen, handleOpenMenu, handleCloseMenu } = HomeHook()
 
 	return (
 		<div id="home">
@@ -20,25 +20,33 @@ function Home() {
 				style={{ width: viewport.width, height: viewport.height * 0.95, zIndex: 0 }}
 				mapStyle="mapbox://styles/mapbox/streets-v9"
 			/>
-			<button className="menu-button" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+			<button
+				className="menu-button f0"
+				onClick={() => {
+					if (isMenuOpen) {
+						handleCloseMenu()
+					} else {
+						handleOpenMenu()
+					}
+					setIsMenuOpen(!isMenuOpen)
+				}}
+			>
 				<GiCog />
 			</button>
-			{isMenuOpen ? (
-				<>
-					<button className="menu-button f1">
-						<GiPositionMarker />
-					</button>
-					<button className="menu-button f2">
-						<GiDodge />
-					</button>
-					<button className="menu-button f3">
-						<GiAnglerFish />
-					</button>
-					<button className="menu-button f4">
-						<GiBoatFishing />
-					</button>
-				</>
-			) : null}
+			<div>
+				<button className="menu-button f1">
+					<GiPositionMarker />
+				</button>
+				<button className="menu-button f2">
+					<GiDodge />
+				</button>
+				<button className="menu-button f3">
+					<GiAnglerFish />
+				</button>
+				<button className="menu-button f4">
+					<GiBoatFishing />
+				</button>
+			</div>
 		</div>
 	)
 }

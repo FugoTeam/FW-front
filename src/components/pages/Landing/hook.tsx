@@ -42,12 +42,13 @@ const LandingHook = () => {
 		// Positionner la caméra
 		camera.position.z = 2
 
-		// Appliquer un fond blanc
-		renderer.setClearColor(0xffffff)
+		// Appliquer un fond transparent
+		const background = new THREE.Color(0x000000)
+		renderer.setClearColor(background, 0)
 
 		// Ajouter des lettre en 3D
 		const letters = "    DLROW OGUF    "
-		const textureText = new THREE.TextureLoader().load("src/assets/texture.png")
+		const textureText = new THREE.TextureLoader().load("src/assets/DALLE.png")
 		// const textMaterial = new THREE.MeshBasicMaterial({ color: 0xe24c4c })
 		const textMaterial = new THREE.MeshBasicMaterial({ map: textureText })
 		const loader = new FontLoader()
@@ -79,6 +80,7 @@ const LandingHook = () => {
 		const animate = () => {
 			requestAnimationFrame(animate)
 			controls.update()
+			sphere.rotation.y += 0.001
 			textGroup.rotation.y -= 0.01
 			renderer.render(scene, camera)
 		}
