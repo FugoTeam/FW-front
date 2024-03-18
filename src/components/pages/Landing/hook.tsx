@@ -1,11 +1,13 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import * as THREE from "three"
-import { OrbitControls } from "three/addons/controls/OrbitControls.js"
+// import { OrbitControls } from "three/addons/controls/OrbitControls.js"
 import { TextGeometry } from "three/addons/geometries/TextGeometry.js"
 import { FontLoader } from "three/addons/loaders/FontLoader.js"
 import gsap from "gsap"
 
 const LandingHook = () => {
+	const [cam, setCam] = useState<THREE.PerspectiveCamera>(new THREE.PerspectiveCamera())
+
 	const mountRef = useRef(null) as unknown as React.MutableRefObject<HTMLDivElement>
 
 	useEffect(() => {
@@ -14,7 +16,8 @@ const LandingHook = () => {
 
 		// Créer une scène, une caméra et un renderer
 		const scene = new THREE.Scene()
-		const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000)
+		const camera = new THREE.PerspectiveCamera(100, width / height, 0.1, 1000)
+		setCam(camera)
 		const renderer = new THREE.WebGLRenderer()
 
 		// Ajouter la caméra à la scène
@@ -26,7 +29,7 @@ const LandingHook = () => {
 
 		// Créer une sphère et appliquer une texture
 		const geometry = new THREE.SphereGeometry(1, 32, 32)
-		const texture = new THREE.TextureLoader().load("https://i.redd.it/4neyptkwv8t71.png")
+		const texture = new THREE.TextureLoader().load("src/assets/minecraft_map.webp")
 		const material = new THREE.MeshBasicMaterial({ map: texture })
 		const sphere = new THREE.Mesh(geometry, material)
 
@@ -34,13 +37,14 @@ const LandingHook = () => {
 		scene.add(sphere)
 
 		// Créer des contrôles pour faire pivoter la sphère
-		const controls = new OrbitControls(camera, renderer.domElement)
-		controls.enableDamping = true
-		controls.dampingFactor = 0.25
-		controls.enableZoom = false
+		// const controls = new OrbitControls(camera, renderer.domElement)
+		// controlsRef.current = controls
+		// controls.enableDamping = true
+		// controls.dampingFactor = 0.25
+		// controls.enableZoom = true
 
 		// Positionner la caméra
-		camera.position.z = 2
+		camera.position.z = 2.5
 
 		// Appliquer un fond transparent
 		const background = new THREE.Color(0x000000)
@@ -79,7 +83,7 @@ const LandingHook = () => {
 		// Fonction de rendu
 		const animate = () => {
 			requestAnimationFrame(animate)
-			controls.update()
+			// controls.update()
 			sphere.rotation.y += 0.001
 			textGroup.rotation.y -= 0.01
 			renderer.render(scene, camera)
@@ -96,17 +100,30 @@ const LandingHook = () => {
 		}
 	}, [])
 
+	const handleScroll = (event: { deltaY: number }) => {
+		if (event.deltaY > 0) {
+			gsap.to(cam.position, { duration: 2, z: 2.5, ease: "power2.inOut" })
+			gsap.to(cam.position, { duration: 2, y: 0, ease: "power2.inOut" })
+			gsap.to(cam.position, { duration: 2, x: 0, ease: "power2.inOut" })
+		} else {
+			gsap.to(cam.position, { duration: 2, z: 1, ease: "power2.inOut" })
+			gsap.to(cam.position, { duration: 2, y: 1.2, ease: "power2.inOut" })
+		}
+	}
+
 	const scrollToHome = () => {
 		const windowHeight = window.innerHeight
 		window.scrollTo({ top: windowHeight, behavior: "smooth" })
 	}
 
 	const onClickCloseLogin = () => {
-		gsap.to(".login-form", { duration: 1, x: "100%", ease: "power2.inOut" })
+		gsap.to(".login-form", { duration: 2, x: "200%", ease: "power2.inOut" })
+		handleScroll({ deltaY: 1 })
 	}
 
 	const onClickOpenLogin = () => {
-		gsap.to(".login-form", { duration: 1, x: "0%", ease: "power2.inOut" })
+		gsap.to(".login-form", { duration: 2, x: "-50%", ease: "power2.inOut" })
+		handleScroll({ deltaY: -1 })
 	}
 
 	return { mountRef, scrollToHome, onClickCloseLogin, onClickOpenLogin }

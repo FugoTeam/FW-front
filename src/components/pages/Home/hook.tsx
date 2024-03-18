@@ -19,7 +19,7 @@ const HomeHook = () => {
 	const handleOpenMenu = () => {
 		const radius = 150 // rayon du cercle
 		const start = 120 // angle de départ en degrés
-		const buttons = 5 // nombre total de boutons
+		const buttons = 6 // nombre total de boutons
 
 		gsap.to(".f0", { duration: 1, rotate: 180, ease: "power2.inOut" })
 
@@ -38,6 +38,7 @@ const HomeHook = () => {
 		gsap.to(".f2", { duration: 1, x: "-25%", y: "-25%", ease: "power2.inOut" })
 		gsap.to(".f3", { duration: 1, x: "-25%", y: "-25%", ease: "power2.inOut" })
 		gsap.to(".f4", { duration: 1, x: "-25%", y: "-25%", ease: "power2.inOut" })
+		gsap.to(".f5", { duration: 1, x: "-25%", y: "-25%", ease: "power2.inOut" })
 	}
 
 	return { viewport, scrollToLanding, handleOpenMenu, isMenuOpen, setIsMenuOpen, handleCloseMenu }
