@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 // import gsap from "gsap"
 
-import Avatar from "../../../assets/avatar.png"
+import Avatar from "../../../assets/Avatar.png"
 
 const ProfileHook = () => {
 	const [pseudo, setPseudo] = useState("")
