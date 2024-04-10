@@ -9,6 +9,11 @@ $purple:#6e1f58;
 
 $outline: 2px;
 
+@font-face {
+  font-family: 'EarlyGameBoy';
+  src: url('./assets/fonts/EarlyGameBoy.ttf') format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -70,11 +75,22 @@ body {
   gap: 30px;
   padding: 20px;
   border-radius: 12px;
-  transform: translateX(200%) translateY(-50%);
+  transform: translateX(300%) translateY(-50%);
   width: 25%;
   & h3 {
     align-self: flex-start;
   }
+}
+
+.gb-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 100%;
+  background-color: #2B2D42;
+  position: relative;
+  z-index: 10;
 }
 
 #landing {
@@ -155,13 +171,30 @@ body {
   z-index: 5;
 }
 
-input {
+.login-input {
+  font-family: EarlyGameBoy, sans-serif;
   appearance: none;
-  border: #E24C4C .2em solid;
+  border: #23252d .1em solid;
+  background-color: transparent;
   outline: none;
-  border-radius: 8px;
-  padding: 1em;
+  padding: .5em;
   width: 100%;
+  color: #23252d;
+  &:focus {
+    border: #23252d .3em solid;
+  }
+}
+
+.login-title {
+  font-family: EarlyGameBoy, sans-serif;
+  color: #23252d;
+  display: flex;
+  justify-content: center;
+}
+
+.success-login {
+  font-family: EarlyGameBoy, sans-serif;
+  color: #23252d;
 }
 
 input[type=search] {
@@ -215,4 +248,33 @@ input[type=search] {
   & button {
     background-color: transparent;
   }
+}
+
+#profile-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 100px 0;
+  background: #a0ccf0;
+  background-image: url(/src/assets/noise.png);
+  background-attachment: fixed;
+}
+
+#profile-info {
+  display: flex;
+  gap: 30px;
+}
+
+.profile-info-data {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #f0a0a0;
+  background-image: url(/src/assets/noise.png);
+  background-attachment: fixed;
+  padding: 20px;
+  border-radius: 12px;
+  width: 40vw;
 }

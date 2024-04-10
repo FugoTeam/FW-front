@@ -117,16 +117,22 @@ const LandingHook = () => {
 	}
 
 	const onClickCloseLogin = () => {
-		gsap.to(".login-form", { duration: 2, x: "200%", ease: "power2.inOut" })
+		gsap.to(".gameboy", { duration: 2, x: "300%", ease: "power2.inOut" })
+		gsap.to(".box", { duration: 2, x: "300%", ease: "power2.inOut" })
 		handleScroll({ deltaY: 1 })
 	}
 
 	const onClickOpenLogin = () => {
-		gsap.to(".login-form", { duration: 2, x: "-50%", ease: "power2.inOut" })
+		gsap.to(".gameboy", { duration: 2, x: "-50%", ease: "power2.inOut" })
+		gsap.to(".box", { duration: 2, x: "-50%", ease: "power2.inOut" })
 		handleScroll({ deltaY: -1 })
 	}
 
-	return { mountRef, scrollToHome, onClickCloseLogin, onClickOpenLogin }
+	const onLogin = () => {
+		gsap.to(".box", { duration: 2, y: "40%", ease: "power2.inOut" })
+	}
+
+	return { mountRef, scrollToHome, onClickCloseLogin, onClickOpenLogin, onLogin }
 }
 
 export default LandingHook
