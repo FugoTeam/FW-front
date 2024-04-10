@@ -1,0 +1,220 @@
+.box{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(300%) translateY(-50%);
+    background: none;
+    height: 400px;
+    width: 600px;
+    display: block;
+    margin: auto;
+    margin-top: 8%;
+}
+  
+.cartridge{
+    position: absolute;
+    height: 80%;
+    width: 52.5%;
+    background: #CDD6DD;
+    left: 23.5%;
+    top: 10%;
+}
+  
+.ellipse-indent{
+    position: absolute;
+    width: 65%;
+    left: 17.5%;
+    height: 12%;
+    top: 10%;
+    background: #CDCACC;
+    border-radius: 40px;
+}
+  
+.triangle{
+    position: absolute;
+    bottom: -3%;
+    -webkit-clip-path: polygon(49% 42%, 0% 100%, 100% 100%);
+    clip-path: polygon(49% 42%, 0% 100%, 100% 100%);
+    background: #CDCACC;
+    width: 18%;
+    height: 15%;
+    left: 40%;
+    transform: rotate(180deg);
+}
+
+.cover{
+    position: absolute;
+    width: 65%;
+    height: 55%;
+    background: #CDCACC;
+    top: 28%;
+    left: 17.5%;
+    border-radius: 5px;
+}
+  
+.cover-copy{
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    background: #EDF2F4;
+    top: 2.5%;
+    left: 2.5%;
+    border-radius: 4px;
+}
+  
+.white-stripe-1{
+    position: absolute;
+    left: 0%;
+    height: 100%;
+    width: 10%;
+    background: #FDFFFC;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+  
+.white-stripe-2{
+    position: absolute;
+    right: 0%;
+    height: 100%;
+    width: 10%;
+    background: #FDFFFC;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+  
+.logo-container{
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    height: 99%;
+    z-indeX: 2;
+}
+  
+.layer-1{
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    left: 10%;
+    top: 10%;
+    -webkit-clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+    background: #41B883;
+    transform: rotate(180deg);
+}
+  
+.layer-2{
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    left: 25%;
+    top: 10%;
+    -webkit-clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+    background: #35495E;
+    transform: rotate(180deg);
+}
+  
+.layer-3{
+    position: absolute;
+    height: 28%;
+    width: 30%;
+    left: 35.5%;
+    top: 0%;
+    -webkit-clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+    background: #EDF2F4;
+    transform: rotate(180deg);
+}
+  
+.rectangle-indent-1{
+    position: absolute;
+    height: 60%;
+    bottom: 0%;
+    width: 5%;
+    opacity: 0.5;
+    background: #F9F7F3;
+}
+  
+.rectangle-indent-2{
+    position: absolute;
+    height: 60%;
+    right: 0%;
+    bottom: 0%;
+    width: 5%;
+    opacity: 0.5;
+    background: #F9F7F3;
+}
+  
+.square-indent{
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    height: 6%;
+    width: 8%;
+    background: transparent;
+}
+  
+.line-indent-1{
+    position: absolute;
+    width: 14%;
+    height: 2%;
+    top: 11%;
+    border-bottom-right-radius: 10px;
+    background: #CDCACC;
+}
+  
+.line-indent-2{
+    position: absolute;
+    width: 14%;
+    height: 2%;
+    top: 15%;
+    border-bottom-right-radius: 10px;
+    background: #CDCACC;
+}
+  
+.line-indent-3{
+    position: absolute;
+    width: 14%;
+    height: 2%;
+    top: 19%;
+    border-bottom-right-radius: 10px;
+    background: #CDCACC;
+}
+  
+.line-indent-4{
+    position: absolute;
+    width: 14%;
+    height: 2%;
+    top: 11%;
+    right: 0%;
+    border-bottom-left-radius: 10px;
+    background: #CDCACC;
+}
+  
+.line-indent-5{
+    position: absolute;
+    width: 14%;
+    height: 2%;
+    top: 15%;
+    right: 0%;
+    border-bottom-left-radius: 10px;
+    background: #CDCACC;
+}
+  
+.line-indent-6{
+    position: absolute;
+    width: 14%;
+    height: 2%;
+    top: 19%;
+    right: 0%;
+    border-bottom-left-radius: 10px;
+    background: #CDCACC;
+}
+  
+@media all and (max-width: 600px) {
+    .box{
+        margin-top: 100px;
+        width: 250px;
+        height: 175px;
+    }
+}

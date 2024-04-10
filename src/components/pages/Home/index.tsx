@@ -1,26 +1,16 @@
 import React from "react"
-import HomeHook from "./hook"
 import Map from "react-map-gl"
-import { GiCog, GiPositionMarker, GiDodge, GiAnglerFish, GiBoatFishing, GiHamburgerMenu, GiBinoculars, Gi3DMeeple } from "react-icons/gi"
+import { GiCog, GiPositionMarker, GiDodge, GiAnglerFish, GiBoatFishing, Gi3DMeeple } from "react-icons/gi"
+
+import HomeHook from "./hook"
+import TabBar from "../../molecules/TabBar"
 
 const Home: React.FC = () => {
-	const { viewport, scrollToLanding, isMenuOpen, setIsMenuOpen, handleOpenMenu, handleCloseMenu } = HomeHook()
+	const { viewport, isMenuOpen, setIsMenuOpen, handleOpenMenu, handleCloseMenu } = HomeHook()
 
 	return (
 		<div id="home">
-			<div id="tab-bar">
-				<button style={{ backgroundColor: "transparent" }}>
-					<GiHamburgerMenu color="#FFF" />
-				</button>
-				<div id="searchbar">
-					<GiBinoculars color="#000" style={{ position: "absolute", top: "8px", left: "10px" }} />
-					<input type="search" placeholder="Search..." />
-				</div>
-
-				<button onClick={scrollToLanding} style={{ height: viewport.height * 0.05 }} className="scroll-button">
-					🌍
-				</button>
-			</div>
+			<TabBar />
 
 			<Map
 				mapboxAccessToken="pk.eyJ1IjoiY2RlZ3VlbGxlIiwiYSI6ImNscmhzcnY0YzAyaXQyanF2Nzh5ODE0cmQifQ.s1SCK5c1vFlz3c4T4-adyA"
@@ -32,6 +22,7 @@ const Home: React.FC = () => {
 				style={{ width: viewport.width, height: viewport.height * 0.95, zIndex: 0 }}
 				mapStyle="mapbox://styles/mapbox/streets-v9"
 			/>
+
 			<button
 				className="menu-button f0"
 				onClick={() => {
@@ -45,6 +36,7 @@ const Home: React.FC = () => {
 			>
 				<GiCog />
 			</button>
+
 			<div>
 				<button className="menu-button f1">
 					<GiPositionMarker />

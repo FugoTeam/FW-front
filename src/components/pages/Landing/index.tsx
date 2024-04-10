@@ -1,9 +1,9 @@
 import { FaRegUser } from "react-icons/fa6"
 import LandingHook from "./hook"
-import LoginForm from "../../organisms/LoginForm"
+import GameBoy from "../../organisms/GameBoy"
 
 const Landing = () => {
-	const { mountRef, scrollToHome, onClickCloseLogin, onClickOpenLogin } = LandingHook()
+	const { mountRef, scrollToHome, onClickCloseLogin, onClickOpenLogin, onLogin } = LandingHook()
 
 	return (
 		<div id="landing-page">
@@ -23,7 +23,7 @@ const Landing = () => {
 				🗺️
 			</button>
 
-			<LoginForm onClose={onClickCloseLogin} />
+			<GameBoy onClose={onClickCloseLogin} onLogin={onLogin} />
 		</div>
 	)
 }
