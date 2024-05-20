@@ -222,7 +222,7 @@ input[type=search] {
 
 #tab-bar {
   width: 100vw;
-  background-color: #E24C4C;
+  background-color: #FFF9ED;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -277,4 +277,10 @@ input[type=search] {
   padding: 20px;
   border-radius: 12px;
   width: 40vw;
+}
+
+.weather-block {
+  background-color: "#12131B"; 
+  border-radius: 6px; 
+  padding: 0 4px;
 }
