@@ -12,7 +12,7 @@ import Gold from "../../assets/Gold.png"
 import Platinum from "../../assets/Platinium.png"
 import Logo from "../../assets/Fugo_logo.svg?react"
 import getWeather from "../../api/openweathermap"
-import WeatherBlock from "../atoms/weatherBlock"
+import WeatherBlock from "../atoms/WeatherBlock"
 import Avatar from "../../assets/Avatar.png"
 
 const TabBar: React.FC = () => {
@@ -27,10 +27,6 @@ const TabBar: React.FC = () => {
 	useEffect(() => {
 		setCurrentDate(moment().locale("fr").format("dddd DD/MM"))
 	}, [])
-
-	useEffect(() => {
-		console.log(currentDate)
-	}, [currentDate])
 
 	useEffect(() => {
 		if (state.latitude) {
